@@ -2,10 +2,9 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from '../icons_assets/Logo.svg';
 import { Box, HStack } from "@chakra-ui/react";
-import '../stylesheets/Nav.css'
+import '../stylesheets/Nav.css';
 
 const Nav = ({ navbarLinks }) => {
-
     const [isVisible, setIsVisible] = useState(true);
     const prevYPos = useRef(window.scrollY);
 
@@ -22,16 +21,16 @@ const Nav = ({ navbarLinks }) => {
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
-            window.removeEventListener('scroll', handleScroll)
+            window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
     return (
         <nav className="navbar" style={{ transform: isVisible ? "translateY(0)" : "translateY(-100%)" }}>
-            <Box as="nav" >
-                <HStack spacing="10vw" style={{ display: "flex", justifyContent: "center", padding: "2vh 0vw" }}>
+            <Box as="nav">
+                <HStack spacing="10vw" className="nav-HStack">
                     <Link className="img-link" to='/'>
-                        <img src={Logo} alt="Little Lemon" width="255vw" />
+                        <img src={Logo} alt="Little Lemon" className="nav-img" />
                     </Link>
                     <HStack spacing="1.8vw">
                         {navbarLinks.map((link, index) => (

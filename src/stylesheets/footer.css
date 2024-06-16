@@ -1,3 +1,4 @@
+/* Footer */
 .footer {
     display: flex;
     flex-wrap: wrap;
@@ -7,25 +8,47 @@
     padding: 16vh 20vw;
 }
 
+/* Footer Label */
 .footer label {
     color: #f4ce14;
 }
 
+/* Footer Listing and Image */
 .listing,
 .footImg {
     width: 150px;
 }
 
+/* List Items */
 li {
     list-style: none;
 }
 
-li>a,
-li>Link {
+/* Links */
+li > a,
+li > Link {
     transition: font-weight 200ms ease-in-out;
 }
 
-li>a:hover,
-li>Link:hover {
+/* Hover Effect for Links */
+li > a:hover,
+li > Link:hover {
     font-weight: 900;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 650px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 8vh 5vw;
+    }
+    .listing,
+    .footImg {
+        width: 100px;
+        margin-bottom: 2vh;
+    }
+    li {
+        margin-bottom: 1vh;
+    }
 }
